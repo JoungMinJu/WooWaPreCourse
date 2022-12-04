@@ -23,4 +23,14 @@ public class Book {
         }
         return answer;
     }
+
+    public int getMultiScore(int index) {
+        int tmp = pages.get(index);
+        int answer = 1;
+        while (tmp > 0) {
+            answer *= (tmp % 10);
+            tmp /= 10;
+        }
+        return answer;
+    }
 }
