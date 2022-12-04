@@ -14,7 +14,20 @@ public class BookGameController {
     public void run(){
         Player pobi = createPlayer("포비");
         Player crong = createPlayer("크롱");
+        Player maxScorePlayer = getMaxScorePlayer(pobi, crong);
+        outputVIew.printResult(maxScorePlayer);
+    }
 
+    public Player getMaxScorePlayer(Player player1, Player player2){
+        int player1Score = player1.getScore();
+        int player2Score = player2.getScore();
+        if(player1Score > player2Score){
+            return player1;
+        }
+        if(player2Score > player1Score){
+            return player2;
+        }
+        return null;
     }
 
     private Player createPlayer(String name){
