@@ -2,10 +2,12 @@ package onboarding.problem1.view;
 
 import onboarding.problem1.model.Player;
 
+import static onboarding.problem1.util.Constants.*;
+
 public class OutputVIew {
 
     public void printInputGuide(String name){
-        System.out.printf("%s의 왼쪽 페이지 번호, 오른쪽 페이지 번호를 공백으로 구분하여 입력해주세요", name);
+        System.out.printf(INPUT_GUIDE, name);
     }
 
     public void printResult(Player maxScorePlayer) {
@@ -14,8 +16,8 @@ public class OutputVIew {
 
     private String getResult(Player maxScorePlayer) {
         if(maxScorePlayer == null){
-            return "무승부입니다.";
+            return TIE_GUIDE;
         }
-        return String.format("%s님이 이겼습니다.", maxScorePlayer.getName());
+        return String.format(WINNER_GUIDE, maxScorePlayer.getName());
     }
 }

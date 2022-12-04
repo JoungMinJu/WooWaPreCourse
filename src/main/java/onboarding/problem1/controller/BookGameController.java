@@ -7,13 +7,16 @@ import onboarding.problem1.view.OutputVIew;
 
 import java.util.List;
 
+import static onboarding.problem1.util.Constants.FIRST_PLAYER_NAME;
+import static onboarding.problem1.util.Constants.SECOND_PLAYER_NAME;
+
 public class BookGameController {
     OutputVIew outputVIew = new OutputVIew();
     InputView inputView = new InputView();
 
     public void run(){
-        Player pobi = createPlayer("포비");
-        Player crong = createPlayer("크롱");
+        Player pobi = createPlayer(FIRST_PLAYER_NAME);
+        Player crong = createPlayer(SECOND_PLAYER_NAME);
         Player maxScorePlayer = getMaxScorePlayer(pobi, crong);
         outputVIew.printResult(maxScorePlayer);
     }
