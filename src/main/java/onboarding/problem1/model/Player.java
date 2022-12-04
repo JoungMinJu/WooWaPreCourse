@@ -23,4 +23,8 @@ public class Player {
         updateScore();
         return score;
     }
+
+    public String getName(){
+        return name;
+    }
 }
