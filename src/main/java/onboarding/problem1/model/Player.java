@@ -14,8 +14,8 @@ public class Player {
     }
 
     private void updateScore(){
-        int maxSumScore = Math.max(book.getSumScore(0), book.getSumScore(1));
-        int maxMultiScore = Math.max(book.getMultiScore(0), book.getMultiScore(1));
+        int maxSumScore = book.getMaxSumScore();
+        int maxMultiScore = book.getMaxMultiScore();
         score = Math.max(maxSumScore, maxMultiScore);
     }
 

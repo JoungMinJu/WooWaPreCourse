@@ -13,6 +13,22 @@ public class Book {
         this.pages = new ArrayList<>(pages);
     }
 
+    public int getMaxSumScore(){
+        int maxScore = -1;
+        for(int index = 0; index < pages.size(); index++){
+            maxScore = Math.max(maxScore, getSumScore(index));
+        }
+        return maxScore;
+    }
+
+    public int getMaxMultiScore(){
+        int maxScore = -1;
+        for(int index =0; index < pages.size(); index++){
+            maxScore = Math.max(maxScore, getMultiScore(index));
+        }
+        return maxScore;
+    }
+
     public int getSumScore(int index) {
         int tmp = pages.get(index);
         int answer = 0;
