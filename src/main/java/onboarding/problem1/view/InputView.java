@@ -3,7 +3,6 @@ package onboarding.problem1.view;
 import camp.nextstep.edu.missionutils.Console;
 import onboarding.problem1.util.Validator;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
