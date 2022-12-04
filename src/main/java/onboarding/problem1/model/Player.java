@@ -5,10 +5,12 @@ import java.util.List;
 public class Player {
     private String name;
     private Book book;
+    private int score;
 
     public Player(String name, List<Integer> pages){
         this.name = name;
         this.book = new Book(pages);
+        this.score = 0;
     }
 
 }
