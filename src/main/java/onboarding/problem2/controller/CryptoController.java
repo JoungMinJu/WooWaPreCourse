@@ -15,7 +15,7 @@ public class CryptoController {
         outputView.printInputGuide();
         Cryptogram cryptogram = getCryptogram();
         updateResult(cryptogram);
-
+        outputView.printResult(cryptogram);
     }
 
     private Cryptogram getCryptogram(){
