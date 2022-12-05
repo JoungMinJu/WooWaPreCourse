@@ -4,15 +4,18 @@ import onboarding.problem2.model.Cryptogram;
 
 import java.util.Queue;
 
+import static onboarding.problem2.util.Constants.INPUT_GUIDE;
+import static onboarding.problem2.util.Constants.RESULT_GUIDE;
+
 public class OutputView {
     StringBuilder sb = new StringBuilder();
 
     public void printInputGuide(){
-        System.out.println("암호문을 입력해주세요");
+        System.out.println(INPUT_GUIDE);
     }
 
     public void printResult(Cryptogram cryptogram){
-        System.out.println(String.format("결과 : %s", getResultString(cryptogram)));
+        System.out.println(String.format(RESULT_GUIDE, getResultString(cryptogram)));
     }
 
     private String getResultString(Cryptogram cryptogram){

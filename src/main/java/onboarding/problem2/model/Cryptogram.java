@@ -2,7 +2,6 @@ package onboarding.problem2.model;
 
 import onboarding.problem2.util.Validator;
 
-import java.util.Queue;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -24,10 +23,10 @@ public class Cryptogram {
     public void updateCryptogram() {
         Queue<Character> tmp = new LinkedList<>();
         Character zero = ' ';
-        while(!cryptoCharacters.isEmpty()){
+        while (!cryptoCharacters.isEmpty()) {
             Character first = cryptoCharacters.poll();
             Character second = cryptoCharacters.peek();
-            if (first != zero && first != second){
+            if (first != zero && first != second) {
                 tmp.add(first);
             }
             zero = first;
@@ -35,7 +34,7 @@ public class Cryptogram {
         this.cryptoCharacters = tmp;
     }
 
-    public boolean isSameSize(Queue<Character> originCryptoCharacters){
+    public boolean isSameSize(Queue<Character> originCryptoCharacters) {
         return cryptoCharacters.size() == originCryptoCharacters.size();
     }
 

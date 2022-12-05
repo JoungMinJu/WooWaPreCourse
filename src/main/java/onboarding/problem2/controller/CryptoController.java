@@ -5,36 +5,35 @@ import onboarding.problem2.view.InputView;
 import onboarding.problem2.view.OutputView;
 
 import java.util.Queue;
-import java.util.Queue;
 
 public class CryptoController {
     OutputView outputView = new OutputView();
     InputView inputView = new InputView();
 
-    public void run(){
+    public void run() {
         outputView.printInputGuide();
         Cryptogram cryptogram = getCryptogram();
         updateResult(cryptogram);
         outputView.printResult(cryptogram);
     }
 
-    private Cryptogram getCryptogram(){
-        while(true){
+    private Cryptogram getCryptogram() {
+        while (true) {
             try {
                 String userInput = inputView.getUserInput();
                 return new Cryptogram(userInput);
-            } catch(IllegalArgumentException e){
+            } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         }
     }
 
-    private void updateResult(Cryptogram cryptogram){
+    private void updateResult(Cryptogram cryptogram) {
         Queue<Character> originCryptoCharacters;
-        do{
+        do {
             originCryptoCharacters = cryptogram.getCryptoCharacters();
             cryptogram.updateCryptogram();
-        } while(! cryptogram.isSameSize(originCryptoCharacters));
+        } while (!cryptogram.isSameSize(originCryptoCharacters));
 
     }
 }
