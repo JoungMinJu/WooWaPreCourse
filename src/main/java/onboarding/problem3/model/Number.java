@@ -9,4 +9,8 @@ public class Number {
         Validator.validateRange(number);
         this.number = number;
     }
+
+    public int getNumber(){
+        return number;
+    }
 }
