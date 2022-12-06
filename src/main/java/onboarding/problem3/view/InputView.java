@@ -5,13 +5,13 @@ import onboarding.problem3.util.Validator;
 
 public class InputView {
 
-    public int getUserNumber(){
+    public int getUserNumber() {
         String userInput = getUserInput();
         Validator.validateIsNumeric(userInput);
         return Integer.parseInt(userInput);
     }
 
-    private String getUserInput(){
+    private String getUserInput() {
         return Console.readLine();
     }
 

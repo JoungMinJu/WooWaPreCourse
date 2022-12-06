@@ -1,12 +1,15 @@
 package onboarding.problem3.view;
 
+import static onboarding.problem3.util.Constants.INPUT_GUIDE;
+import static onboarding.problem3.util.Constants.RESULT_GUIDE;
+
 public class OutputView {
 
-    public void printInputGuide(){
-        System.out.println("숫자를 입력해주세요");
+    public void printInputGuide() {
+        System.out.println(INPUT_GUIDE);
     }
 
-    public void printResult(int result){
-        System.out.printf("총 박수는 %d번 칩니다.",result);
+    public void printResult(int result) {
+        System.out.printf(RESULT_GUIDE, result);
     }
 }

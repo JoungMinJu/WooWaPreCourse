@@ -1,5 +1,7 @@
 package onboarding.problem3.service;
 
+import static onboarding.problem3.util.Constants.*;
+
 public class NumberService {
 
     public int countThreeSixNine(int number){
@@ -20,6 +22,6 @@ public class NumberService {
     }
 
     private boolean isThreeSixNine(int number){
-        return number == 3 || number == 6 || number == 9;
+        return number == FIRST_COUNT_INT || number == SECOND_COUNT_INT || number == THIRD_COUNT_INT;
     }
 }
