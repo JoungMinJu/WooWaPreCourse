@@ -2,10 +2,10 @@ package onboarding.problem4.model;
 
 import onboarding.problem4.util.Validator;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
+
+import static onboarding.problem4.util.Constants.*;
 
 public class Word {
     List<String> words;
@@ -32,7 +32,7 @@ public class Word {
     }
 
     private boolean isKorean(String input) {
-        return Pattern.matches("^[ㄱ-ㅎ가-힣]*$", input);
+        return Pattern.matches(KOREAN_REGEX, input);
     }
 
     private Character changeCharacter(Character c) {
@@ -44,9 +44,9 @@ public class Word {
 
     private Character changeAlphabeticCharacter(Character c) {
         if (Character.isLowerCase(c)) {
-            return (char) (219 - c);
+            return (char) (LOWER_CASE_CHANGE_VALUE - c);
         }
-        return (char) (155 - c);
+        return (char) (UPPER_CASE_CHANGE_VALUE - c);
     }
 
 }
