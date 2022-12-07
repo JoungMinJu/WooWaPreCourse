@@ -6,6 +6,7 @@ public class Problem4 {
 
     public static void main(String[] args) {
         WordGameController wordGameController = new WordGameController();
+        wordGameController.run();
     }
 
 }
