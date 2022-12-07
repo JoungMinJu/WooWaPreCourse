@@ -11,10 +11,12 @@ public class WordGameController {
     public void run(){
         outputView.printInputGuide();
         Word userWord = getUserWord();
+        String changedWord = userWord.getChangedWord();
+        outputView.printResult(changedWord);
     }
 
 
-    private Word getUserWord(){
+    public Word getUserWord(){
         while(true){
             try{
                 String userWord = inputView.getUserWord();
