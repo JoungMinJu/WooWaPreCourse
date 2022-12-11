@@ -8,7 +8,10 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,6 +24,20 @@ class EnrollServiceTest {
         return Stream.of(
                 Arguments.of("alswn@email.com 정민주,alswjd@email.com 정민정",
                         List.of(new Person("alswn@email.com","정민주"), new Person("alswjd@email.com", "정민정")))
+        );
+    }
+
+    static Stream<Arguments> getSecondData(){
+        return Stream.of(
+                Arguments.of(List.of(new Person("alswn@email.com", "정민주"),
+                                    new Person("alswjd@email.com","정민정"),
+                                    new Person( "a@email.com","가나다"),
+                                    new Person("b@email.com", "마나다"),
+                                    new Person("c@email.com", "가나민주"),
+                                    new Person("d@email.com", "라마나다"),
+                                    new Person("f@email.com", "바차카타")),
+                            List.of("alswn@email.com","alswjd@email.com","a@email.com","b@email.com",
+                                    "c@email.com","d@email.com"))
         );
     }
 
@@ -94,6 +111,14 @@ class EnrollServiceTest {
             expectedPersonString.add(person.toString());
         }
         assertThat(resultPersonString).isEqualTo(expectedPersonString);
+    }
+
+    @ParameterizedTest(name = "{0} 리스트의 중복 닉네임 이메일 리스트는 {1}")
+    @MethodSource("getSecondData")
+    @DisplayName("중복 닉네임 이메일 리스트 get 로직 검증")
+    void 중복_닉네임_이메일(List<Person> persons, List<String> expected){
+        List<String> result = enrollService.getDuplicatedNickNamePersonEmails(persons);
+        assertThat(result).containsAll(expected);
     }
 
 }
