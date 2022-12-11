@@ -3,17 +3,19 @@ package onboarding.problem6.util;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import static onboarding.problem6.util.Constants.*;
+
 public class Validator {
 
     public static void validateNumberOfPerson(List<String> input){
-        if(input.size() < 1 || input.size() > 10000){
-            throw new IllegalArgumentException("[ERROR] 크루는 1명 이상 10,000명 이하여야합니다.");
+        if(input.size() < MIN_NUMBER_OF_PERSON || input.size() > MAX_NUMBER_OF_PERSON){
+            throw new IllegalArgumentException(PERSON_NUMBER_ERROR);
         }
     }
 
     public static void validateNumberOfPersonParam(List<String> input){
         if(input.size() != 2){
-            throw new IllegalArgumentException("[ERROR] 이메일과 이름 두 가지가 입력되어야 합니다.");
+            throw new IllegalArgumentException(PARAMETER_NUMBER_ERROR);
         }
     }
 
@@ -23,18 +25,18 @@ public class Validator {
     }
 
     private static void validateEmailForm(String input){
-        String[] split = input.split("@");
+        String[] split = input.split(EMAIL_SEPARATOR);
         if( split.length != 2){
-            throw new IllegalArgumentException("[ERROR] 이메일은 이메일 형식으로 입력되어야 합니다.");
+            throw new IllegalArgumentException(EMAIL_FORM_ERROR);
         }
-        if(!split[1].equals("email.com")){
-            throw new IllegalArgumentException("[ERROR] 이메일은 email.com 도메인만 허용합니다.");
+        if(!split[DOMAIN_INDEX].equals(VALID_EMAIL_DOMAIN)){
+            throw new IllegalArgumentException(EMAIL_DOMAIN_ERROR);
         }
     }
 
     private static void validateEmailLength(String input){
-        if(input.length() < 11 || input.length() >= 20){
-            throw new IllegalArgumentException("[ERROR] 이메일은 11자 이상 20자 미만이어야합니다.");
+        if(input.length() < MIN_LENGTH_OF_EMAIL || input.length() >= MAX_LENGTH_OF_EMAIL){
+            throw new IllegalArgumentException(EMAIL_LENGTH_ERROR);
         }
     }
 
@@ -44,14 +46,14 @@ public class Validator {
     }
 
     private static void validateNicknameForm(String input){
-        if(!Pattern.matches(".*[ㄱ-ㅎㅏ-ㅣ가-힣]+.*", input)){
-            throw new IllegalArgumentException("[ERROR] 닉네임은 한글이어야합니다.");
+        if(!Pattern.matches(KOREAN_REGEX, input)){
+            throw new IllegalArgumentException(NICKNAME_TYPE_ERROR);
         }
     }
 
     private static void validateNickNameLength(String input){
-        if(input.length() < 1 || input.length() >= 20){
-            throw new IllegalArgumentException("[ERROR] 닉네임은 1자 이상 20자 미만이어야합니다.");
+        if(input.length() < MIN_LENGTH_OF_NICKNAME || input.length() >= MAX_LENGTH_OF_NICKNAME){
+            throw new IllegalArgumentException(NICKNAME_LENGTH_ERROR);
         }
     }
 

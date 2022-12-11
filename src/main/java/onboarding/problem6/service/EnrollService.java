@@ -6,15 +6,17 @@ import onboarding.problem6.util.Validator;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static onboarding.problem6.util.Constants.*;
+
 public class EnrollService {
     Map<String, List<Person>> twoCharacterToPerson;
 
     public List<Person> getPersons(String input) {
         List<Person> persons = new ArrayList<>();
-        List<String> inputPersons = Arrays.asList(input.split(","));
+        List<String> inputPersons = Arrays.asList(input.split(PERSON_SEPARATOR));
         Validator.validateNumberOfPerson(inputPersons);
         for (String inputPerson : inputPersons) {
-            List<String> personParams = Arrays.asList(inputPerson.split(" "));
+            List<String> personParams = Arrays.asList(inputPerson.split(PARAMETER_SEPARATOR));
             persons.add(getPerson(personParams));
         }
         return persons;
@@ -22,9 +24,9 @@ public class EnrollService {
 
     private Person getPerson(List<String> input) {
         Validator.validateNumberOfPersonParam(input);
-        Validator.validateEmail(input.get(0));
-        Validator.validateNickname(input.get(1));
-        return new Person(input.get(0), input.get(1));
+        Validator.validateEmail(input.get(EMAIL_INDEX));
+        Validator.validateNickname(input.get(NICKNAME_INDEX));
+        return new Person(input.get(EMAIL_INDEX), input.get(NICKNAME_INDEX));
     }
 
     public List<String> getDuplicatedNickNamePersonEmails(List<Person> persons) {
@@ -46,8 +48,8 @@ public class EnrollService {
     private void updateTwoCharacterToPerson(Person person) {
         String nickname = person.getNickname();
 
-        for (int index = 0; index <= nickname.length() - 2; index++) {
-            String substring = nickname.substring(index, index + 2);
+        for (int index = 0; index <= nickname.length() - TWO_CHARACTER_REFERENCE_VALUE; index++) {
+            String substring = nickname.substring(index, index + TWO_CHARACTER_REFERENCE_VALUE);
             if (!twoCharacterToPerson.containsKey(substring)) {
                 twoCharacterToPerson.put(substring, new ArrayList<>());
             }
@@ -59,7 +61,7 @@ public class EnrollService {
         List<String> emails = new ArrayList<>();
         for (String key : twoCharacterToPerson.keySet()) {
             List<Person> persons = twoCharacterToPerson.get(key);
-            if (persons.size() < 2) {
+            if (persons.size() < DUPLICATED_REFERENCE_VALUE) {
                 continue;
             }
             emails.addAll(getEmails(persons));

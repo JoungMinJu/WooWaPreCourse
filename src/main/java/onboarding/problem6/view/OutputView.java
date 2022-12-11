@@ -3,9 +3,11 @@ package onboarding.problem6.view;
 import java.util.Collections;
 import java.util.List;
 
+import static onboarding.problem6.util.Constants.INPUT_GUIDE;
+
 public class OutputView {
     public void printInputGuide(){
-        System.out.println("이메일과 닉네임을 입력해주세요. (이메일-닉네임 구분자 :  (공백) / 사람-사람 구분자 : ,(쉼표)");
+        System.out.println(INPUT_GUIDE);
     }
 
     public void printResult(List<String> emails){
