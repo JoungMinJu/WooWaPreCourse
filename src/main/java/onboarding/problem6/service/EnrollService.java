@@ -24,9 +24,19 @@ public class EnrollService {
 
     private Person getPerson(List<String> input) {
         Validator.validateNumberOfPersonParam(input);
+        String email = getEmail(input);
+        String nickName = getNickName(input);
+        return new Person(email, nickName);
+    }
+
+    private String getEmail(List<String> input) {
         Validator.validateEmail(input.get(EMAIL_INDEX));
+        return input.get(EMAIL_INDEX);
+    }
+
+    private String getNickName(List<String> input) {
         Validator.validateNickname(input.get(NICKNAME_INDEX));
-        return new Person(input.get(EMAIL_INDEX), input.get(NICKNAME_INDEX));
+        return input.get(NICKNAME_INDEX);
     }
 
     public List<String> getDuplicatedNickNamePersonEmails(List<Person> persons) {
