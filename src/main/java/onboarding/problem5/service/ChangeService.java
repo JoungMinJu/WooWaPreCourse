@@ -10,14 +10,8 @@ public class ChangeService {
     List<Integer> units = List.of(50000, 10000, 5000, 1000, 500, 100, 50, 10, 1);
 
     public Change getChange(String input){
-        while(true){
-            try{
-                int change = getValidateChange(input);
-                return new Change(change);
-            } catch (IllegalArgumentException e){
-                System.out.println(e.getMessage());
-            }
-        }
+        int change = getValidateChange(input);
+        return new Change(change);
     }
 
     private int getValidateChange(String change){
