@@ -13,6 +13,7 @@ public class ChangeController {
     ChangeService changeService = new ChangeService();
 
     public void run() {
+        outputView.printInputGuide();
         Change change = getChange();
         List<Integer> result = changeService.getResult(change);
         outputView.printResult(result);
@@ -21,12 +22,13 @@ public class ChangeController {
     private Change getChange(){
         while(true) {
             try{
-                outputView.printInputGuide();
                 String userInput = inputView.getUserInput();
-                return changeService.getChange(userInput);
+                int validateChange = changeService.getValidateChange(userInput);
+                return new Change(validateChange);
             } catch(IllegalArgumentException e){
                 System.out.println(e.getMessage());
             }
         }
     }
+
 }

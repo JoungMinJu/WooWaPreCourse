@@ -12,12 +12,7 @@ import static onboarding.problem5.util.Constants.INIT_UNITS;
 public class ChangeService {
     List<Integer> units = INIT_UNITS;
 
-    public Change getChange(String input){
-        int change = getValidateChange(input);
-        return new Change(change);
-    }
-
-    private int getValidateChange(String change){
+    public int getValidateChange(String change){
         int changeInt = changeStringToInt(change);
         Validator.validateRange(changeInt);
         return changeInt;
