@@ -1,18 +1,21 @@
 package onboarding.problem5.util;
 
+import static onboarding.problem5.util.Constants.NUMERIC_ERROR;
+import static onboarding.problem5.util.Constants.RANGE_ERROR;
+
 public class Validator {
 
     public static void validateIsNumeric(String input){
         try{
             Integer.parseInt(input);
         }catch(NumberFormatException e){
-            throw new IllegalArgumentException("[ERROR] 금액은 숫자여야합니다.");
+            throw new IllegalArgumentException(NUMERIC_ERROR);
         }
     }
 
     public static void validateRange(int money){
         if(money < 1 || money > 1000000){
-            throw new IllegalArgumentException("[ERROR] 금액은 1원 이상 1,000,000원 이하여야합니다.");
+            throw new IllegalArgumentException(RANGE_ERROR);
         }
     }
 }

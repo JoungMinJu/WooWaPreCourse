@@ -6,8 +6,11 @@ import onboarding.problem5.util.Validator;
 import java.util.ArrayList;
 import java.util.List;
 
+import static onboarding.problem5.util.Constants.INIT_INDEX;
+import static onboarding.problem5.util.Constants.INIT_UNITS;
+
 public class ChangeService {
-    List<Integer> units = List.of(50000, 10000, 5000, 1000, 500, 100, 50, 10, 1);
+    List<Integer> units = INIT_UNITS;
 
     public Change getChange(String input){
         int change = getValidateChange(input);
@@ -27,7 +30,7 @@ public class ChangeService {
 
     public List<Integer> getResult(Change change){
         List<Integer> lst = new ArrayList<>();
-        for(int index = 0; index < units.size(); index++){
+        for(int index = INIT_INDEX; index < units.size(); index++){
             lst.add(getChangeForUnit(change, units.get(index)));
         }
         return lst;
