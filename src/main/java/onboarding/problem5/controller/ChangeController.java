@@ -17,6 +17,6 @@ public class ChangeController {
         String userInput = inputView.getUserInput();
         Change change = changeService.getChange(userInput);
         List<Integer> result = changeService.getResult(change);
-
+        outputView.printResult(result);
     }
 }
