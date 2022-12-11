@@ -16,7 +16,8 @@ public class EnrollController {
     public void run(){
         outputView.printInputGuide();
         List<Person> persons = getPersons();
-
+        List<String> result = enrollService.getDuplicatedNickNamePersonEmails(persons);
+        outputView.printResult(result);
     }
 
     private List<Person> getPersons(){
@@ -25,7 +26,7 @@ public class EnrollController {
                 String userInput = inputView.getUserInput();
                 return enrollService.getPersons(userInput);
             } catch(IllegalArgumentException e){
-                System.out.println(e.getMessage());
+                outputView.printErrorMessage(e);
             }
         }
     }
