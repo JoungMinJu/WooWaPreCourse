@@ -9,6 +9,14 @@ public class Person {
         this.nickname = nickname;
     }
 
+    public String getNickname(){
+        return nickname;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
