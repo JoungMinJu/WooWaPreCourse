@@ -6,4 +6,5 @@ public class OutputView {
         System.out.println("금액을 입력해주세요");
     }
 
+
 }

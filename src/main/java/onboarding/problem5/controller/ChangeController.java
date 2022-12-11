@@ -5,6 +5,8 @@ import onboarding.problem5.service.ChangeService;
 import onboarding.problem5.view.InputView;
 import onboarding.problem5.view.OutputView;
 
+import java.util.List;
+
 public class ChangeController {
     InputView inputView = new InputView();
     OutputView outputView = new OutputView();
@@ -14,7 +16,7 @@ public class ChangeController {
         outputView.printInputGuide();
         String userInput = inputView.getUserInput();
         Change change = changeService.getChange(userInput);
-
+        List<Integer> result = changeService.getResult(change);
 
     }
 }
