@@ -1,14 +1,24 @@
 package onboarding.problem7.util;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class ValidatorTest {
+
+    static Stream<Arguments> getData(){
+        return Stream.of(
+                Arguments.of(List.of("a", "b", "c")),
+                Arguments.of(List.of("a"))
+        );
+    }
 
     @ParameterizedTest(name = "{0}은 길이가 1 미만 30 초과여서 예외 발생")
     @ValueSource(strings = {"", "asdfasdafqeradsfzvcafdghadfgjhadfjhadf"})
@@ -28,4 +38,21 @@ class ValidatorTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
+    @ParameterizedTest(name = "{0}은 1이상 10,000이하가 아니어서 에외 발생")
+    @ValueSource(ints = {0, 10001, 100000})
+    @DisplayName("친구 목록 사이즈 검증")
+    void 목록_사이즈_검증(int size){
+        assertThatThrownBy( () ->
+                Validator.validateRelationsSize(size))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @ParameterizedTest(name = "{0}은 두 개의 사람이 주어지지 않아서 예외 발생")
+    @MethodSource("getData")
+    @DisplayName("관계 요소 개수 검증")
+    void 관계_요소_개수(List<String> friends){
+        assertThatThrownBy(() ->
+                Validator.validateRelationFriend(friends))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
