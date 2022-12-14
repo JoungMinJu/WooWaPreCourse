@@ -1,7 +1,6 @@
 package onboarding.problem7.repository;
 
 import onboarding.problem7.model.User;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -9,8 +8,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class UserRepositoryTest {
 
@@ -40,5 +38,6 @@ class UserRepositoryTest {
         assertThat(result.get().getName())
                 .isEqualTo(name);
     }
+
 
 }
