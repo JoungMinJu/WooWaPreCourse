@@ -5,7 +5,7 @@ import onboarding.problem7.util.Validator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public class User implements Comparable<User>{
     private String name;
     // 일급컬렉션?
     private List<User> friends;
@@ -48,5 +48,17 @@ public class User {
         return friends.stream()
                 .map(User::getName)
                 .anyMatch(name -> name.equals(user.getName()));
+    }
+
+    @Override
+    public int compareTo(User user) {
+        if(user.score == score){
+            return this.name.compareTo(user.name); // 오름차순 정렬
+        }
+        return user.score - score;
+    }
+
+    public int getScore() {
+        return score;
     }
 }

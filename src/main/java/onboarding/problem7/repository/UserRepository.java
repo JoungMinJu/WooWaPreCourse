@@ -27,4 +27,10 @@ public class UserRepository {
                 .collect(Collectors.toList());
     }
 
+    public List<User> findAllExceptMe(User me){
+        return users.stream()
+                .filter(user -> !user.getName().equals(me.getName()))
+                .collect(Collectors.toList());
+    }
+
 }

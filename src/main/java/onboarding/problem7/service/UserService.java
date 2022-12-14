@@ -4,7 +4,9 @@ import onboarding.problem7.model.User;
 import onboarding.problem7.repository.UserRepository;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserService {
     UserRepository userRepository = new UserRepository();
@@ -36,8 +38,7 @@ public class UserService {
         userTwo.addFriends(userOne);
     }
 
-    public void updateVisitorScore(User visitorDto){
-        User visitor = createAndGetUser(visitorDto.getName());
+    public void updateVisitorScore(User visitor){
         visitor.addScore(1);
     }
 
@@ -56,6 +57,16 @@ public class UserService {
                 targetUser.addScore(10);
             }
         }
+    }
+
+    public List<User> getResult(User me){
+        List<User> findUsers = userRepository.findAllExceptMe(me);
+        Collections.sort(findUsers);
+        return findUsers.stream()
+                .filter(user -> !me.isMyFriend(user))
+                .filter(user -> user.getScore() > 0)
+                .limit(5)
+                .collect(Collectors.toList());
     }
 
 }

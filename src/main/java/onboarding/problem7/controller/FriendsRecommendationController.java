@@ -19,6 +19,8 @@ public class FriendsRecommendationController {
         getRelationsAndUpdateUserRelation(relationsSize);
         getAndUpdateVisitors(user);
         updateUsersScore(user);
+        List<User> result = getResult(user);
+        outputView.printResult(result);
     }
 
     private User getUser() {
@@ -87,7 +89,6 @@ public class FriendsRecommendationController {
     }
 
     private void updateUsersScore(User me){
-        // 전체 User 가져오기
         updateScoreOfMutualFriends(me);
         updateScoreOfVisitorsFriends(me);
     }
@@ -101,6 +102,10 @@ public class FriendsRecommendationController {
         for (User visitor : visitors) {
             userService.updateVisitorScore(visitor);
         }
+    }
+
+    private List<User> getResult(User me){
+        return userService.getResult(me);
     }
 
 }
