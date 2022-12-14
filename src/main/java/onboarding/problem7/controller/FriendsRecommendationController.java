@@ -18,6 +18,7 @@ public class FriendsRecommendationController {
         int relationsSize = getRelationsSize();
         getRelationsAndUpdateUserRelation(relationsSize);
         getAndUpdateVisitors(user);
+        updateUsersScore(user);
     }
 
     private User getUser() {
@@ -82,6 +83,23 @@ public class FriendsRecommendationController {
             } catch(IllegalArgumentException e){
                 outputView.printError(e.getMessage());
             }
+        }
+    }
+
+    private void updateUsersScore(User me){
+        // 전체 User 가져오기
+        updateScoreOfMutualFriends(me);
+        updateScoreOfVisitorsFriends(me);
+    }
+
+    private void updateScoreOfMutualFriends(User me){
+
+    }
+
+    private void updateScoreOfVisitorsFriends(User me){
+        List<User> visitors = me.getVisitors();
+        for (User visitor : visitors) {
+            userService.updateVisitorScore(visitor);
         }
     }
 

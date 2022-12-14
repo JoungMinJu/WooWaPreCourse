@@ -36,4 +36,9 @@ public class UserService {
         userTwo.addFriends(userOne);
     }
 
+    public void updateVisitorScore(User visitorDto){
+        User visitor = createAndGetUser(visitorDto.getName());
+        visitor.addScore(1);
+    }
+
 }

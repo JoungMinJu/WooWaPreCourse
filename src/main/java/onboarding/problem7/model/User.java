@@ -31,4 +31,12 @@ public class User {
     public void addVisitors(User user){
         visitors.add(user);
     }
+
+    public List<User> getVisitors(){
+        return visitors;
+    }
+
+    public void addScore(int score){
+        this.score += score;
+    }
 }
