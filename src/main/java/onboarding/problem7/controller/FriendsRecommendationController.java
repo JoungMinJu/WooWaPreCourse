@@ -17,6 +17,7 @@ public class FriendsRecommendationController {
         User user = getUser();
         int relationsSize = getRelationsSize();
         getRelationsAndUpdateUserRelation(relationsSize);
+        getAndUpdateVisitors(user);
     }
 
     private User getUser() {
@@ -60,6 +61,25 @@ public class FriendsRecommendationController {
                 Validator.validateRelationFriend(names);
                 return userService.findAllByName(names);
             } catch (IllegalArgumentException e) {
+                outputView.printError(e.getMessage());
+            }
+        }
+    }
+
+    private void getAndUpdateVisitors(User user){
+        List<User> visitors = getVisitors();
+        for (User visitor : visitors) {
+            user.addVisitors(visitor);
+        }
+    }
+
+    private List<User> getVisitors(){
+        outputView.printVisitorsInputGuide();
+        while(true){
+            try{
+                List<String> visitors = inputView.getVisitors();
+                return userService.findAllByName(visitors);
+            } catch(IllegalArgumentException e){
                 outputView.printError(e.getMessage());
             }
         }

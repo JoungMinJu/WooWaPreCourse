@@ -22,4 +22,8 @@ public class InputView {
     public List<String> getRelationNames(){
         return List.of(getUserInput().split(" "));
     }
+
+    public List<String> getVisitors(){
+        return List.of(getUserInput().split(" "));
+    }
 }

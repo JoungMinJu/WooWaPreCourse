@@ -17,4 +17,8 @@ public class OutputView {
     public void printRelationInputGuide(){
         System.out.println("서로 아는 친구를 입력해주세요(공백으로 구분) : ");
     }
+
+    public void printVisitorsInputGuide(){
+        System.out.println("해당 User 방문자 목록 입력해주세요(공백으로 구분) : ");
+    }
 }

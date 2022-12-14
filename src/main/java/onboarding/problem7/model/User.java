@@ -7,7 +7,9 @@ import java.util.List;
 
 public class User {
     private String name;
+    // 일급컬렉션?
     private List<User> friends;
+    private List<User> visitors;
     private int score;
 
     public User(String name){
@@ -15,6 +17,7 @@ public class User {
         this.name = name;
         this.friends = new ArrayList<>();
         this.score = 0;
+        this.visitors = new ArrayList<>();
     }
 
     public String getName(){
@@ -23,5 +26,9 @@ public class User {
 
     public void addFriends(User user){
         friends.add(user);
+    }
+
+    public void addVisitors(User user){
+        visitors.add(user);
     }
 }
