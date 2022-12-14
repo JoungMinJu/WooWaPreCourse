@@ -24,3 +24,25 @@
 | user | friends | visitors | result |
 | --- | --- | --- | --- |
 | "mrko" | [ ["donut", "andole"], ["donut", "jun"], ["donut", "mrko"], ["shakevan", "andole"], ["shakevan", "jun"], ["shakevan", "mrko"] ] | ["bedi", "bedi", "donut", "bedi", "shakevan"] | ["andole", "jun", "bedi"] |
+
+
+<br>
+
+# [ 기능 정의 ]
+- [ ] 사용자 아이디 user 입력 받기
+- [ ] 친구 관계 정보 friends 입력 받기
+- [ ] 방문 기록 visitors 입력 받기
+- [ ] 각 사용자들의 user와 함께 아는 친구의 수 구하기
+- [ ] user 타임라인에 방문한 친구 구하기
+- [ ] 해당 친구가 몇 번 방문했는지 구하기
+- [ ] 각 친구의 점수 구하기
+- [ ] 추천 점수 높은 순으로 최대 다섯 명 뽑기
+- [ ] 이름순으로 정렬해서 return하기
+
+<br>
+
+# [ 예외 ]
+- [ ] 사용자 아이디 user 길이가 1 미만 30 초과인 경우
+- [ ] 사용자 아이디 user가 알파벳 소문자로만 구성되어있지 않은 경우
+- [ ] 친구 관계 정보 friends 의 개수가 1 미만 10,000 초과인경우
+- [ ] friends의 각 원소가 길이가 2인 리스트가 아닌 경우
