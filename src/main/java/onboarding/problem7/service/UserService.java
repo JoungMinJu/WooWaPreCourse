@@ -41,4 +41,21 @@ public class UserService {
         visitor.addScore(1);
     }
 
+    public void findTargetUsersAndUpdateMutualScore(User me){
+        List<User> allExceptMeAndMyFriends
+                = userRepository.findAllExceptMeAndMyFriends(me);
+        for (User user : allExceptMeAndMyFriends) {
+            updateMutualScore(me, user);
+        }
+    }
+
+    private void updateMutualScore(User me, User targetUser){
+        List<User> friends = targetUser.getFriends();
+        for (User friend : friends) {
+            if(me.isMyFriend(friend)){
+                targetUser.addScore(10);
+            }
+        }
+    }
+
 }

@@ -5,6 +5,7 @@ import onboarding.problem7.model.User;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class UserRepository {
     private List<User> users = new ArrayList<>();
@@ -17,6 +18,13 @@ public class UserRepository {
         return users.stream()
                 .filter(e -> e.getName().equals(name))
                 .findFirst();
+    }
+
+    public List<User> findAllExceptMeAndMyFriends(User me){
+        return users.stream()
+                .filter(user -> !user.getName().equals(me.getName()))
+                .filter(user -> !me.isMyFriend(user))
+                .collect(Collectors.toList());
     }
 
 }

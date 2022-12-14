@@ -93,7 +93,7 @@ public class FriendsRecommendationController {
     }
 
     private void updateScoreOfMutualFriends(User me){
-
+        userService.findTargetUsersAndUpdateMutualScore(me);
     }
 
     private void updateScoreOfVisitorsFriends(User me){

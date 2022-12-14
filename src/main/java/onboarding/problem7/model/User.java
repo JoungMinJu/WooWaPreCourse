@@ -36,7 +36,17 @@ public class User {
         return visitors;
     }
 
+    public List<User> getFriends() {
+        return friends;
+    }
+
     public void addScore(int score){
         this.score += score;
+    }
+
+    public boolean isMyFriend(User user){
+        return friends.stream()
+                .map(User::getName)
+                .anyMatch(name -> name.equals(user.getName()));
     }
 }
