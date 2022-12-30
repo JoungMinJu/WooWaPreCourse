@@ -23,34 +23,34 @@
 # 추가 사항
 
 ## 1. onboarding 레포는
-: __다리 건너기 미션__까지 끝낸 후, 최종 코테 준비를 위해 refactoring한 버전이 들어있습니다 :)
+: __다리 건너기 미션__까지 끝낸 후, 최종 코테 준비를 위해 refactoring한 버전이 들어있습니다 :) <br>
 : 기존 미션을 위해 제출했던 [PR 기록](https://github.com/woowacourse-precourse/java-onboarding/pull/1258) 입니다 :)
 
 <br>
 
 ## 2. baseball 레포는
-: MVC 패턴을 도입하지 않고, 구조를 혼자 고민해서 작성한 레포지토리입니다.
-: 이 과정에서 고민했던 부분은 [회고록](https://velog.io/@alswn9938/%EC%9A%B0%EC%95%84%ED%95%9C-%ED%85%8C%ED%81%AC%EC%BD%94%EC%8A%A4-2%EC%A3%BC%EC%B0%A8-2 으로 작성했습니다
+: MVC 패턴을 도입하지 않고, 구조를 혼자 고민해서 작성한 레포지토리입니다. <br>
+: 이 과정에서 고민했던 부분은 [회고록](https://velog.io/@alswn9938/%EC%9A%B0%EC%95%84%ED%95%9C-%ED%85%8C%ED%81%AC%EC%BD%94%EC%8A%A4-2%EC%A3%BC%EC%B0%A8-2) 으로 작성했습니다 <br>
 : 기존 미션을 위해 제출했던 [PR 기록](https://github.com/woowacourse-precourse/java-baseball/pull/753)입니다:)
 
 <br>
 
 ## 3. lotto 레포는
-: MVC 패턴 도입을 처음 시도한 미션 레포지토리입니다:)
-: 이 과정에서 고민했던 부분은 [회고록](https://velog.io/@alswn9938/%EC%9A%B0%EC%95%84%ED%95%9C-%ED%85%8C%ED%81%AC%EC%BD%94%EC%8A%A4-3%EC%A3%BC%EC%B0%A8)으로 작성했습니다
+: MVC 패턴 도입을 처음 시도한 미션 레포지토리입니다:) <br>
+: 이 과정에서 고민했던 부분은 [회고록](https://velog.io/@alswn9938/%EC%9A%B0%EC%95%84%ED%95%9C-%ED%85%8C%ED%81%AC%EC%BD%94%EC%8A%A4-3%EC%A3%BC%EC%B0%A8)으로 작성했습니다 <br>
 : 기존 미션을 위해 제출했던 [PR 기록](https://github.com/woowacourse-precourse/java-lotto/pull/462)입니다:)
 
 <br>
 
-## 4. bridge 레포는
-: 제가 생각한 MVC 패턴을 정형화할 수 있었던 미션 레포지토리입니다
-: 이 과정에서 고민했던 부분을 [회고록](https://velog.io/@alswn9938/%EC%9A%B0%EC%95%84%ED%95%9C-%ED%85%8C%ED%81%AC%EC%BD%94%EC%8A%A4-4%EC%A3%BC%EC%B0%A8)으로 작성했습니다:)
+## 4. bridge 레포는 
+: 제가 생각한 MVC 패턴을 정형화할 수 있었던 미션 레포지토리입니다 <br>
+: 이 과정에서 고민했던 부분을 [회고록](https://velog.io/@alswn9938/%EC%9A%B0%EC%95%84%ED%95%9C-%ED%85%8C%ED%81%AC%EC%BD%94%EC%8A%A4-4%EC%A3%BC%EC%B0%A8)으로 작성했습니다:) <br>
 : 기존 미션을 위해 제출했던 [PR 기록](https://github.com/woowacourse-precourse/java-bridge/pull/577)입니다:)
 
 
 <br>
 
 ## 5. menu 레포는
-: 최종 미션 레포지토리입니다:) MVC 패턴과 Repository를 도입해서 구현을 완료하였습니다 :)
+: 최종 미션 레포지토리입니다:) MVC 패턴과 Repository를 도입해서 구현을 완료하였습니다 :) <br>
 : 미션을 위해 제출했던 [PR 기록](https://github.com/woowacourse-precourse/java-menu/pull/202) 입니다:)
 
