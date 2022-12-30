@@ -23,7 +23,7 @@
 # 추가 사항
 
 ## 1. onboarding 레포는
-: __다리 건너기 미션__까지 끝낸 후, 최종 코테 준비를 위해 refactoring한 버전이 들어있습니다 :) <br>
+: __다리 건너기 미션__ 까지 끝낸 후, 최종 코테 준비를 위해 refactoring한 버전이 들어있습니다 :) <br>
 : 기존 미션을 위해 제출했던 [PR 기록](https://github.com/woowacourse-precourse/java-onboarding/pull/1258) 입니다 :)
 
 <br>
